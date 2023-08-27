@@ -2,5 +2,6 @@ package com.example.rest.laboratorium.models.enums;
 
 public enum TesteSituacao {
     FALHO,
-    TESTE_OK
+    TESTE_OK,
+    EM_ANDAMENTO
 }

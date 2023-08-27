@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("com.example.rest.laboratorium.controllers")
-@ComponentScan("com.example.rest.laboratorium.dataload")
+@ComponentScan("com.example.rest.laboratorium.configurations")
 @ComponentScan("com.example.rest.laboratorium.models")
 public class LaboratoriumApplication {
 

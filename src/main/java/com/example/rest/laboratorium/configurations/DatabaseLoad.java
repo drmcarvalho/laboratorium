@@ -1,4 +1,4 @@
-package com.example.rest.laboratorium.dataload;
+package com.example.rest.laboratorium.configurations;
 
 import com.example.rest.laboratorium.repositories.cenario.CenarioRepositorio;
 import org.slf4j.Logger;
@@ -12,9 +12,9 @@ public class DatabaseLoad {
     private static final Logger log = LoggerFactory.getLogger(DatabaseLoad.class);
 
     @Bean
-    CommandLineRunner initDatabase(CenarioRepositorio cenarioRepositorio) {
+    CommandLineRunner init(CenarioRepositorio cenarioRepositorio) {
         return args -> {
-            log.info("Init database teste");
+            log.info("Documentação em http://localhost:8080/swagger-ui/index.html");
         };
     }
 }

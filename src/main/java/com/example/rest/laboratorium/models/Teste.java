@@ -13,7 +13,7 @@ public class Teste {
     private Long idCenario;
     private String descricao;
     private String titulo;
-    private TesteSituacao testeSituacao;
+    private TesteSituacao testeSituacao = TesteSituacao.EM_ANDAMENTO;
 
     public Long getId() {
         return id;
