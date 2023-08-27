@@ -3,7 +3,9 @@ package com.example.rest.laboratorium.controllers.cenario;
 import com.example.rest.laboratorium.commons.resposta.GerarRespostaBadRequest;
 import com.example.rest.laboratorium.models.Cenario;
 import com.example.rest.laboratorium.commons.validador.CampoVazio;
+import com.example.rest.laboratorium.models.CenarioModelAssembler;
 import com.example.rest.laboratorium.repositories.cenario.CenarioRepositorio;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,13 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class NovoCenarioController {
 
     public final CenarioRepositorio repositorio;
+    private final CenarioModelAssembler modelAssembler;
 
-    public NovoCenarioController(CenarioRepositorio repositorio) {
+    public NovoCenarioController(CenarioRepositorio repositorio, CenarioModelAssembler modelAssembler) {
         this.repositorio = repositorio;
+        this.modelAssembler = modelAssembler;
     }
 
     @PostMapping("/api/cenarios")
-    ResponseEntity<?> action(@RequestBody Cenario cenario) {
+    public ResponseEntity<?> action(@RequestBody Cenario cenario) {
         if (CampoVazio.validar(cenario.getTitulo())) {
             return GerarRespostaBadRequest.resposta("Error de campo", "Forneça um titulo para o cenario");
         }
@@ -28,6 +32,6 @@ public class NovoCenarioController {
         }
 
 
-        return ResponseEntity.ok(repositorio.save(cenario));
+        return ResponseEntity.ok(modelAssembler.toModel(repositorio.save(cenario)));
     }
 }
