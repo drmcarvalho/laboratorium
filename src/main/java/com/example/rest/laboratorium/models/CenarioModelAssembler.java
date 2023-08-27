@@ -14,7 +14,6 @@ public class CenarioModelAssembler implements RepresentationModelAssembler<Cenar
     public EntityModel<Cenario> toModel(Cenario cenario) {
         return EntityModel.of(cenario,
                 linkTo(methodOn(ObterCenarioPorIdController.class).action(cenario.getId())).withSelfRel(),
-                linkTo(methodOn(ListarTodosCenariosController.class).action())
-                .withRel("/api/cenarios"));
+                linkTo(methodOn(ListarTodosCenariosController.class).action()).withRel("/api/cenarios"));
     }
 }

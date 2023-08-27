@@ -1,6 +1,6 @@
 package com.example.rest.laboratorium.controllers.cenario;
 
-import com.example.rest.laboratorium.controllers.controlleradvice.CenarioNotFoundException;
+import com.example.rest.laboratorium.controllers.controlleradvice.RecursoNotFoundException;
 import com.example.rest.laboratorium.models.Cenario;
 import com.example.rest.laboratorium.models.CenarioModelAssembler;
 import com.example.rest.laboratorium.repositories.cenario.CenarioRepositorio;
@@ -22,6 +22,6 @@ public class ObterCenarioPorIdController {
 
     @GetMapping("/api/cenarios/{id}")
     public EntityModel<Cenario> action(@PathVariable Long id) {
-        return modelAssembler.toModel(repositorio.findById(id).orElseThrow(() -> new CenarioNotFoundException(id)));
+        return modelAssembler.toModel(repositorio.findById(id).orElseThrow(() -> new RecursoNotFoundException(id, "Cenario")));
     }
 }

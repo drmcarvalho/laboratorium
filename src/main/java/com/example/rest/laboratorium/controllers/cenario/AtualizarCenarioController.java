@@ -5,7 +5,6 @@ import com.example.rest.laboratorium.commons.validador.CampoVazio;
 import com.example.rest.laboratorium.models.Cenario;
 import com.example.rest.laboratorium.models.CenarioModelAssembler;
 import com.example.rest.laboratorium.repositories.cenario.CenarioRepositorio;
-import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;

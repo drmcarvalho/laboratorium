@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-public class CenarioNotFoundAdvice {
+public class RecursoNotFoundAdvice {
 
     @ResponseBody
     @ExceptionHandler
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String cenarioNotFoundHandler(CenarioNotFoundException exception) {
+    public String cenarioNotFoundHandler(RecursoNotFoundException exception) {
         return exception.getMessage();
     }
 }
