@@ -1,12 +1,14 @@
 package com.example.rest.laboratorium.models;
 
 import com.example.rest.laboratorium.models.enums.TesteSituacao;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
 public class Teste {
+    @Schema(hidden = true)
     private @Id @GeneratedValue Long id;
     private Long idCenario;
     private String descricao;

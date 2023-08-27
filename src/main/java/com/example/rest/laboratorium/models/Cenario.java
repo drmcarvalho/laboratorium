@@ -1,6 +1,7 @@
 package com.example.rest.laboratorium.models;
 
 import com.example.rest.laboratorium.models.enums.CenarioSituacao;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -12,6 +13,7 @@ import java.util.Objects;
 
 @Entity
 public class Cenario {
+    @Schema(hidden = true)
     private @Id @GeneratedValue Long id;
 
     public Long getId() {
