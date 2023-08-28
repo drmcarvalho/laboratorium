@@ -16,7 +16,7 @@ public class TesteModelAssembler implements RepresentationModelAssembler<Teste, 
     public EntityModel<Teste> toModel(Teste teste) {
         return EntityModel.of(teste,
                 linkTo(methodOn(ObterTestePorIdController.class).action(teste.getId())).withSelfRel(),
-                linkTo(methodOn(ObterTestePorCenarioController.class).action(teste.getIdCenario())).withSelfRel(),
+                linkTo(methodOn(ObterTestePorCenarioController.class, teste.getIdCenario()).action(teste.getIdCenario())).withRel("/api/cenarios/testes"),
                 linkTo(methodOn(ListarTodosCenariosController.class).action()).withRel("/api/cenarios"),
                 linkTo(methodOn(ListarTodosTestesController.class).action()).withRel("/api/testes"));
     }

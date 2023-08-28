@@ -8,6 +8,7 @@ import com.example.rest.laboratorium.models.TesteModelAssembler;
 import com.example.rest.laboratorium.repositories.cenario.CenarioRepositorio;
 import com.example.rest.laboratorium.repositories.teste.TesteRepositorio;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,15 +28,16 @@ public class NovoTesteController {
         this.modelAssembler = modelAssembler;
     }
 
+    @PostMapping("/api/testes")
     public ResponseEntity<?> action(@RequestBody Teste teste) {
-        return cenarioRepositorio.findById(teste.getIdCenario())
-                .map(cenario -> {
-                    if (CampoVazio.validar(teste.getTitulo()))
-                        return GerarRespostaBadRequest.resposta("Error campo", "Forneca um titulo para o teste");
-                    if (CampoVazio.validar(teste.getDescricao()))
-                        return GerarRespostaBadRequest.resposta("Error campo", "Forneca uma descricao para o teste");
-                    return ResponseEntity.ok(modelAssembler.toModel(testeRepositorio.save(teste)));
-                })
-                .orElseThrow(() -> new RecursoNotFoundException(teste.getIdCenario(), "Cenario"));
+        if (CampoVazio.validar(teste.getTitulo()))
+            return GerarRespostaBadRequest.resposta("Error campo", "Forneca um titulo para o teste");
+        if (CampoVazio.validar(teste.getDescricao()))
+            return GerarRespostaBadRequest.resposta("Error campo", "Forneca uma descricao para o teste");
+        if (!cenarioRepositorio.findById(teste.getIdCenario()).isPresent())
+            return GerarRespostaBadRequest.resposta("Error campo", "Forneça o idCenario");
+
+
+        return ResponseEntity.ok(modelAssembler.toModel(testeRepositorio.save(teste)));
     }
 }
