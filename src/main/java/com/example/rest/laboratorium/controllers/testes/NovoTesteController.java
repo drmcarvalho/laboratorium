@@ -2,7 +2,6 @@ package com.example.rest.laboratorium.controllers.testes;
 
 import com.example.rest.laboratorium.commons.resposta.GerarRespostaBadRequest;
 import com.example.rest.laboratorium.commons.validador.CampoVazio;
-import com.example.rest.laboratorium.controllers.controlleradvice.RecursoNotFoundException;
 import com.example.rest.laboratorium.models.Teste;
 import com.example.rest.laboratorium.models.TesteModelAssembler;
 import com.example.rest.laboratorium.repositories.cenario.CenarioRepositorio;
@@ -34,8 +33,10 @@ public class NovoTesteController {
             return GerarRespostaBadRequest.resposta("Error campo", "Forneca um titulo para o teste");
         if (CampoVazio.validar(teste.getDescricao()))
             return GerarRespostaBadRequest.resposta("Error campo", "Forneca uma descricao para o teste");
+        if (teste.getIdCenario() == null)
+            return GerarRespostaBadRequest.resposta("Erro campo", "Forneca um idCenario para o teste");
         if (!cenarioRepositorio.findById(teste.getIdCenario()).isPresent())
-            return GerarRespostaBadRequest.resposta("Error campo", "Forneça o idCenario");
+            return GerarRespostaBadRequest.resposta("Error campo", "Cenario nao encontrado");
 
 
         return ResponseEntity.ok(modelAssembler.toModel(testeRepositorio.save(teste)));
