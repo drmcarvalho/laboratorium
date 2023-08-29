@@ -1,7 +1,7 @@
 package com.example.rest.laboratorium.models;
 
 import com.example.rest.laboratorium.controllers.cenario.ListarTodosCenariosController;
-import com.example.rest.laboratorium.controllers.testes.*;
+import com.example.rest.laboratorium.controllers.teste.*;
 import com.example.rest.laboratorium.models.enums.TesteSituacao;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.hateoas.EntityModel;

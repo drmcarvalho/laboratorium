@@ -1,4 +1,4 @@
-package com.example.rest.laboratorium.controllers.testes;
+package com.example.rest.laboratorium.controllers.teste;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

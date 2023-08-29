@@ -1,4 +1,4 @@
-package com.example.rest.laboratorium.controllers.testes;
+package com.example.rest.laboratorium.controllers.teste;
 
 import com.example.rest.laboratorium.models.Teste;
 import com.example.rest.laboratorium.models.TesteModelAssembler;

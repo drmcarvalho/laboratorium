@@ -1,4 +1,4 @@
-package com.example.rest.laboratorium.controllers.testes;
+package com.example.rest.laboratorium.controllers.teste;
 
 import com.example.rest.laboratorium.commons.resposta.GerarRespostaBadRequest;
 import com.example.rest.laboratorium.models.TesteModelAssembler;
@@ -11,24 +11,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SuppressWarnings({"unused", "ClassCanBeRecord"})
 @RestController
-public class DefinirTesteComoAndamentoController {
+public class DefinirTesteComoOkController {
 
     private final TesteRepositorio repositorio;
     private final TesteModelAssembler modelAssembler;
 
-    public DefinirTesteComoAndamentoController(TesteRepositorio repositorio, TesteModelAssembler modelAssembler) {
+    public DefinirTesteComoOkController(TesteRepositorio repositorio, TesteModelAssembler modelAssembler) {
         this.repositorio = repositorio;
         this.modelAssembler = modelAssembler;
     }
 
-    @PatchMapping("/api/testes/em_andamento/{id}")
+    @PatchMapping("/api/testes/teste_ok/{id}")
     public ResponseEntity<?> action(@PathVariable Long id) {
         if (!repositorio.findById(id).isPresent()) {
             return GerarRespostaBadRequest.resposta("Campo error", "Teste nao foi encontrado");
         }
 
         return ResponseEntity.ok(repositorio.findById(id).map(teste -> {
-            teste.setTesteSituacao(TesteSituacao.EM_ANDAMENTO);
+            teste.setTesteSituacao(TesteSituacao.TESTE_OK);
             return modelAssembler.toModel(repositorio.save(teste));
         }));
     }
