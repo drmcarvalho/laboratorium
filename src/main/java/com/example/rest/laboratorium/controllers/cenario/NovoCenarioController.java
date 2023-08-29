@@ -4,7 +4,7 @@ import com.example.rest.laboratorium.commons.resposta.GerarRespostaBadRequest;
 import com.example.rest.laboratorium.models.Cenario;
 import com.example.rest.laboratorium.commons.validador.CampoVazio;
 import com.example.rest.laboratorium.models.CenarioModelAssembler;
-import com.example.rest.laboratorium.repositories.cenario.CenarioRepositorio;
+import com.example.rest.laboratorium.repositories.CenarioRepositorio;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

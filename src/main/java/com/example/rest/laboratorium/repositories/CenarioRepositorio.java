@@ -1,4 +1,4 @@
-package com.example.rest.laboratorium.repositories.cenario;
+package com.example.rest.laboratorium.repositories;
 
 import com.example.rest.laboratorium.models.Cenario;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -3,7 +3,7 @@ package com.example.rest.laboratorium.controllers.teste;
 import com.example.rest.laboratorium.commons.resposta.GerarRespostaBadRequest;
 import com.example.rest.laboratorium.models.TesteModelAssembler;
 import com.example.rest.laboratorium.models.enums.TesteSituacao;
-import com.example.rest.laboratorium.repositories.teste.TesteRepositorio;
+import com.example.rest.laboratorium.repositories.TesteRepositorio;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;

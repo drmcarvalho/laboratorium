@@ -2,7 +2,7 @@ package com.example.rest.laboratorium.controllers.cenario;
 
 import com.example.rest.laboratorium.models.Cenario;
 import com.example.rest.laboratorium.models.CenarioModelAssembler;
-import com.example.rest.laboratorium.repositories.cenario.CenarioRepositorio;
+import com.example.rest.laboratorium.repositories.CenarioRepositorio;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;

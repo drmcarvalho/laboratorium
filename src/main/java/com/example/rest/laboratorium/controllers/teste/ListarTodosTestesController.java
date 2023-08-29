@@ -2,7 +2,7 @@ package com.example.rest.laboratorium.controllers.teste;
 
 import com.example.rest.laboratorium.models.Teste;
 import com.example.rest.laboratorium.models.TesteModelAssembler;
-import com.example.rest.laboratorium.repositories.teste.TesteRepositorio;
+import com.example.rest.laboratorium.repositories.TesteRepositorio;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;

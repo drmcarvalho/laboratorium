@@ -1,6 +1,6 @@
 package com.example.rest.laboratorium.configurations;
 
-import com.example.rest.laboratorium.repositories.cenario.CenarioRepositorio;
+import com.example.rest.laboratorium.repositories.CenarioRepositorio;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
