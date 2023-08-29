@@ -26,6 +26,6 @@ Vamos executar o maven e rodar projeto com o H2Database em memória digitanto o 
 mvnw clean spring-boot:run
 ```
 
-## OpenAPI
+## OpenAPI documentação da API Rest
 
 Para consultar a lista de endpoints acesse `localhost:8080/swagger-ui/index.html`
