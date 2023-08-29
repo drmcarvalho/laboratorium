@@ -14,7 +14,7 @@ public class EntradaModelAssembler implements RepresentationModelAssembler<Entra
     public EntityModel<Entrada> toModel(Entrada entrada) {
         return EntityModel.of(entrada,
                 linkTo(methodOn(ObterEntradaPorId.class).action(entrada.getId())).withSelfRel(),
-                linkTo(methodOn(ListarTodasEntradasPorTeste.class, entrada.getIdTeste()).action(entrada.getIdTeste())).withRel("/api/entradas/teste")
+                linkTo(methodOn(ListarTodasEntradasPorTeste.class, entrada.getIdTeste()).action(entrada.getIdTeste())).withRel("/api/listarPorIdTeste/teste")
         );
     }
 }

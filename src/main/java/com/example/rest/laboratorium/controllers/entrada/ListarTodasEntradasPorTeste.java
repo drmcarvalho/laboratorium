@@ -23,7 +23,7 @@ public class ListarTodasEntradasPorTeste {
         this.modelAssembler = modelAssembler;
     }
 
-    @GetMapping("/api/entradas/teste/{idTeste}")
+    @GetMapping("/api/entradas/listarPorIdTeste/{idTeste}")
     public CollectionModel<EntityModel<Entrada>> action(@PathVariable Long idTeste) {
         return CollectionModel.of(repositorio
                 .findByIdTeste(idTeste)
