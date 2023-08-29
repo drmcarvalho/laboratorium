@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.stream.Collectors;
 
+@SuppressWarnings({"unused", "ClassCanBeRecord"})
 @RestController
 public class ListarTodosTestesController {
     private final TesteRepositorio repositorio;
