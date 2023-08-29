@@ -4,6 +4,28 @@ Laboratorium é um aplicativo que permite você gerenciar, mapear e controlar se
 
 Sendo que este projeto trata-se do backend RESTFul em Java. Você pode estender suas funcionalidades para fazer um aplicativo completo usando a API do Laboratorium.
 
+## Preparando ambiente de execução
+
+Primeiramente, para executar o projeto precisamos ter instalado a seguinte versão do Java JDK `17.0.8` que corresponde ao Java 17.
+
+Clone o projeto Laboratorium para sua maquina
+
+```
+git clone git@github.com:drmcarvalho/laboratorium.git
+```
+
+Acesse o novo diretório do projeto 
+
+```
+cd laboratorium
+```
+
+Vamos executar o maven e rodar projeto com o H2Database em memória digitanto o seguinte comando
+
+```
+mvnw clean spring-boot:run
+```
+
 ## OpenAPI
 
 Para consultar a lista de endpoints acesse `localhost:8080/swagger-ui/index.html`
