@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+@SuppressWarnings({"unused", "ClassCanBeRecord"})
 @RestController
 public class ObterEntradaPorId {
 

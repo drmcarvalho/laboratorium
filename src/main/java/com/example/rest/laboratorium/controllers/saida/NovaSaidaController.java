@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@SuppressWarnings({"unused", "ClassCanBeRecord"})
 @RestController
 public class NovaSaidaController {
 

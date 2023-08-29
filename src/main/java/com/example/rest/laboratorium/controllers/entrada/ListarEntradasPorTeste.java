@@ -12,6 +12,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 import java.util.stream.Collectors;
 
+@SuppressWarnings({"unused", "ClassCanBeRecord"})
 @RestController
 public class ListarEntradasPorTeste {
 
