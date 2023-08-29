@@ -7,6 +7,7 @@ import com.example.rest.laboratorium.models.SaidaModelAssembler;
 import com.example.rest.laboratorium.repositories.EntradaRepositorio;
 import com.example.rest.laboratorium.repositories.SaidaRepositorio;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +25,7 @@ public class NovaSaidaController {
         this.modelAssembler = modelAssembler;
     }
 
+    @PostMapping("/api/saidas")
     public ResponseEntity<?> action(@RequestBody Saida saida) {
         if (CampoVazio.validar(saida.getConteudo()))
             return GerarRespostaBadRequest.resposta("Campo error", "Informe o conteudo da saida gerada pela entrada do teste");
