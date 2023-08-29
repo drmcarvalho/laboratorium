@@ -13,12 +13,12 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 import java.util.stream.Collectors;
 
 @RestController
-public class ListarTodasEntradasPorTeste {
+public class ListarEntradasPorTeste {
 
     private final EntradaRepositorio repositorio;
     private final EntradaModelAssembler modelAssembler;
 
-    public ListarTodasEntradasPorTeste(EntradaRepositorio repositorio, EntradaModelAssembler modelAssembler) {
+    public ListarEntradasPorTeste(EntradaRepositorio repositorio, EntradaModelAssembler modelAssembler) {
         this.repositorio = repositorio;
         this.modelAssembler = modelAssembler;
     }
@@ -30,6 +30,6 @@ public class ListarTodasEntradasPorTeste {
                 .stream()
                 .map(modelAssembler::toModel)
                 .collect(Collectors.toList()),
-            linkTo(methodOn(ListarTodasEntradasPorTeste.class).action(idTeste)).withSelfRel());
+            linkTo(methodOn(ListarEntradasPorTeste.class).action(idTeste)).withSelfRel());
     }
 }
