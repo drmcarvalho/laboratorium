@@ -6,12 +6,14 @@ import com.example.rest.laboratorium.models.Teste;
 import com.example.rest.laboratorium.models.TesteModelAssembler;
 import com.example.rest.laboratorium.repositories.CenarioRepositorio;
 import com.example.rest.laboratorium.repositories.TesteRepositorio;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @SuppressWarnings({"unused", "ClassCanBeRecord"})
+@Tag(name = "Testes")
 @RestController
 public class AtualizarTesteController {
     private final TesteRepositorio testeRepositorio;

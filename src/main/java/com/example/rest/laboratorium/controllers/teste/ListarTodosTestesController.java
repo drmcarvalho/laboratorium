@@ -3,6 +3,7 @@ package com.example.rest.laboratorium.controllers.teste;
 import com.example.rest.laboratorium.models.Teste;
 import com.example.rest.laboratorium.models.TesteModelAssembler;
 import com.example.rest.laboratorium.repositories.TesteRepositorio;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
@@ -13,6 +14,7 @@ import java.util.stream.Collectors;
 
 @SuppressWarnings({"unused", "ClassCanBeRecord"})
 @RestController
+@Tag(name = "Testes")
 public class ListarTodosTestesController {
     private final TesteRepositorio repositorio;
     private final TesteModelAssembler modelAssembler;

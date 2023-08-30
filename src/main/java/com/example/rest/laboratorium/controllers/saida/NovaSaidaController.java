@@ -6,6 +6,7 @@ import com.example.rest.laboratorium.models.Saida;
 import com.example.rest.laboratorium.models.SaidaModelAssembler;
 import com.example.rest.laboratorium.repositories.EntradaRepositorio;
 import com.example.rest.laboratorium.repositories.SaidaRepositorio;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SuppressWarnings({"unused", "ClassCanBeRecord"})
 @RestController
+@Tag(name = "Saidas")
 public class NovaSaidaController {
 
     private final EntradaRepositorio entradaRepositorio;

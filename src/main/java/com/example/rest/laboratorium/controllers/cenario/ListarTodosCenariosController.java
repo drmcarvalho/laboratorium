@@ -3,6 +3,8 @@ package com.example.rest.laboratorium.controllers.cenario;
 import com.example.rest.laboratorium.models.Cenario;
 import com.example.rest.laboratorium.models.CenarioModelAssembler;
 import com.example.rest.laboratorium.repositories.CenarioRepositorio;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.tags.Tags;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
@@ -13,6 +15,7 @@ import java.util.stream.Collectors;
 
 @SuppressWarnings({"unused", "ClassCanBeRecord"})
 @RestController
+@Tag(name = "Cenarios")
 public class ListarTodosCenariosController {
     private final CenarioRepositorio repositorio;
     private final CenarioModelAssembler modelAssembler;

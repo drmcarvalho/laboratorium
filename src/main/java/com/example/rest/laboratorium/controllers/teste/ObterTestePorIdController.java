@@ -4,6 +4,7 @@ import com.example.rest.laboratorium.controllers.controlleradvice.RecursoNotFoun
 import com.example.rest.laboratorium.models.Teste;
 import com.example.rest.laboratorium.models.TesteModelAssembler;
 import com.example.rest.laboratorium.repositories.TesteRepositorio;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SuppressWarnings({"unused", "ClassCanBeRecord"})
 @RestController
+@Tag(name = "Testes")
 public class ObterTestePorIdController {
 
     private final TesteRepositorio repositorio;

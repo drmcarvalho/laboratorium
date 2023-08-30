@@ -6,6 +6,7 @@ import com.example.rest.laboratorium.models.Teste;
 import com.example.rest.laboratorium.models.TesteModelAssembler;
 import com.example.rest.laboratorium.repositories.CenarioRepositorio;
 import com.example.rest.laboratorium.repositories.TesteRepositorio;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SuppressWarnings({"unused", "ClassCanBeRecord"})
 @RestController
+@Tag(name = "Testes")
 public class NovoTesteController {
 
     private final TesteRepositorio testeRepositorio;

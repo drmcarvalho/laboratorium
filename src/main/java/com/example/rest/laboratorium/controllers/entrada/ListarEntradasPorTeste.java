@@ -3,6 +3,7 @@ package com.example.rest.laboratorium.controllers.entrada;
 import com.example.rest.laboratorium.models.Entrada;
 import com.example.rest.laboratorium.models.EntradaModelAssembler;
 import com.example.rest.laboratorium.repositories.EntradaRepositorio;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 
 @SuppressWarnings({"unused", "ClassCanBeRecord"})
 @RestController
+@Tag(name = "Entradas")
 public class ListarEntradasPorTeste {
 
     private final EntradaRepositorio repositorio;

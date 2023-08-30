@@ -4,6 +4,7 @@ import com.example.rest.laboratorium.commons.resposta.GerarRespostaBadRequest;
 import com.example.rest.laboratorium.models.TesteModelAssembler;
 import com.example.rest.laboratorium.models.enums.TesteSituacao;
 import com.example.rest.laboratorium.repositories.TesteRepositorio;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SuppressWarnings({"unused", "ClassCanBeRecord"})
 @RestController
+@Tag(name = "Testes")
 public class DefinirTesteComoOkController {
 
     private final TesteRepositorio repositorio;
