@@ -4,14 +4,8 @@ import com.example.rest.laboratorium.controllers.controlleradvice.RecursoNotFoun
 import com.example.rest.laboratorium.dtos.relatorio.EntradaSaidaDto;
 import com.example.rest.laboratorium.dtos.relatorio.RelatorioExecucaoCenarioDto;
 import com.example.rest.laboratorium.dtos.relatorio.TesteDto;
-import com.example.rest.laboratorium.models.Entrada;
-import com.example.rest.laboratorium.models.ResultadoFinal;
-import com.example.rest.laboratorium.models.Saida;
-import com.example.rest.laboratorium.models.Teste;
-import org.springframework.stereotype.Component;
 
-import java.util.List;
-import java.util.Optional;
+import org.springframework.stereotype.Component;
 
 @SuppressWarnings({"ClassCanBeRecord"})
 @Component
