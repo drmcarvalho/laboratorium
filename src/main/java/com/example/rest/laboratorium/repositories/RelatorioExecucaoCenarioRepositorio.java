@@ -38,24 +38,24 @@ public class RelatorioExecucaoCenarioRepositorio {
 
     public RelatorioExecucaoCenarioDto gerar(Long idCenario) {
         return cenarioRepositorio.findById(idCenario).map(cenario -> {
-            RelatorioExecucaoCenarioDto relatorioExecucaoCenarioDto = new RelatorioExecucaoCenarioDto();
+            var relatorioExecucaoCenarioDto = new RelatorioExecucaoCenarioDto();
             relatorioExecucaoCenarioDto.setCenario(cenario.getTitulo());
             relatorioExecucaoCenarioDto.setDescricao(cenario.getDescricao());
 
-            Optional<ResultadoFinal> resultadoFinal = resultadoFinalRepositorio.findByIdCenario(idCenario);
+            var resultadoFinal = resultadoFinalRepositorio.findByIdCenario(idCenario);
             resultadoFinal.ifPresent(r -> relatorioExecucaoCenarioDto.setResultadoFinal(r.getComentario()));
 
-            List<Teste> testes = testeRepositorio.findByIdCenario(idCenario);
-            List<TesteDto> testeDtos = testes.stream().map(teste -> {
-                TesteDto testeDto = new TesteDto();
+            var testes = testeRepositorio.findByIdCenario(idCenario);
+            var testeDtos = testes.stream().map(teste -> {
+                var testeDto = new TesteDto();
                 testeDto.setDescricao(teste.getDescricao());
                 testeDto.setTitulo(teste.getTitulo());
 
-                List<Entrada> entradas = entradaRepositorio.findByIdTeste(teste.getId());
-                List<EntradaSaidaDto>  entradaSaidaDtos = entradas.stream().map(e -> {
-                    EntradaSaidaDto entradaSaidaDto = new EntradaSaidaDto();
+                var entradas = entradaRepositorio.findByIdTeste(teste.getId());
+                var entradaSaidaDtos = entradas.stream().map(e -> {
+                    var entradaSaidaDto = new EntradaSaidaDto();
                     entradaSaidaDto.setEntradaConteudo(e.getConteudo());
-                    Optional<Saida> saida = saidaRepositorio.findByIdEntrada(e.getId());
+                    var saida = saidaRepositorio.findByIdEntrada(e.getId());
                     saida.ifPresent(s -> entradaSaidaDto.setSaidaConteudo(s.getConteudo()));
                     return entradaSaidaDto;
                 }).toList();
