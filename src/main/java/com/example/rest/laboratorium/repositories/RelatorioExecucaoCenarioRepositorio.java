@@ -41,13 +41,16 @@ public class RelatorioExecucaoCenarioRepositorio {
             RelatorioExecucaoCenarioDto relatorioExecucaoCenarioDto = new RelatorioExecucaoCenarioDto();
             relatorioExecucaoCenarioDto.setCenario(cenario.getTitulo());
             relatorioExecucaoCenarioDto.setDescricao(cenario.getDescricao());
+
             Optional<ResultadoFinal> resultadoFinal = resultadoFinalRepositorio.findByIdCenario(idCenario);
             resultadoFinal.ifPresent(r -> relatorioExecucaoCenarioDto.setResultadoFinal(r.getComentario()));
+
             List<Teste> testes = testeRepositorio.findByIdCenario(idCenario);
             List<TesteDto> testeDtos = testes.stream().map(teste -> {
                 TesteDto testeDto = new TesteDto();
                 testeDto.setDescricao(teste.getDescricao());
                 testeDto.setTitulo(teste.getTitulo());
+
                 List<Entrada> entradas = entradaRepositorio.findByIdTeste(teste.getId());
                 List<EntradaSaidaDto>  entradaSaidaDtos = entradas.stream().map(e -> {
                     EntradaSaidaDto entradaSaidaDto = new EntradaSaidaDto();
@@ -56,9 +59,11 @@ public class RelatorioExecucaoCenarioRepositorio {
                     saida.ifPresent(s -> entradaSaidaDto.setSaidaConteudo(s.getConteudo()));
                     return entradaSaidaDto;
                 }).toList();
+
                 testeDto.setEntradaSaidaDtos(entradaSaidaDtos);
                 return testeDto;
             }).toList();
+
             relatorioExecucaoCenarioDto.setTesteDtos(testeDtos);
             return relatorioExecucaoCenarioDto;
         }).orElseThrow(() -> new RecursoNotFoundException(idCenario, "Cenario"));
