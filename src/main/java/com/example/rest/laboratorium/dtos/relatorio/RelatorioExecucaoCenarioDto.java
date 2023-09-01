@@ -2,21 +2,21 @@ package com.example.rest.laboratorium.dtos.relatorio;
 
 import java.util.List;
 
-public class RelatorioExecucaoTesteDto {
+public class RelatorioExecucaoCenarioDto {
 
     private String cenario;
     private String descricao;
     private String resultadoFinal;
     private List<TesteDto> testeDtos;
 
-    public RelatorioExecucaoTesteDto(String cenario, String descricao, String resultadoFinal, List<TesteDto> testeDtos) {
+    public RelatorioExecucaoCenarioDto(String cenario, String descricao, String resultadoFinal, List<TesteDto> testeDtos) {
         this.cenario = cenario;
         this.descricao = descricao;
         this.resultadoFinal = resultadoFinal;
         this.testeDtos = testeDtos;
     }
 
-    public RelatorioExecucaoTesteDto() { }
+    public RelatorioExecucaoCenarioDto() { }
 
     public String getCenario() {
         return cenario;
