@@ -6,12 +6,12 @@ public class TesteDto {
 
     private String descricao;
     private String titulo;
-    private List<EntradaDto> entradaDtos;
+    private List<EntradaSaidaDto> entradaSaidaDtos;
 
-    public TesteDto(String descricao, String titulo, List<EntradaDto> entradaDtos) {
+    public TesteDto(String descricao, String titulo, List<EntradaSaidaDto> entradaSaidaDtos) {
         this.descricao = descricao;
         this.titulo = titulo;
-        this.entradaDtos = entradaDtos;
+        this.entradaSaidaDtos = entradaSaidaDtos;
     }
 
     public TesteDto() { }
@@ -32,11 +32,11 @@ public class TesteDto {
         this.titulo = titulo;
     }
 
-    public List<EntradaDto> getEntradaDtos() {
-        return entradaDtos;
+    public List<EntradaSaidaDto> getEntradaSaidaDtos() {
+        return entradaSaidaDtos;
     }
 
-    public void setEntradaDtos(List<EntradaDto> entradaDtos) {
-        this.entradaDtos = entradaDtos;
+    public void setEntradaSaidaDtos(List<EntradaSaidaDto> entradaSaidaDtos) {
+        this.entradaSaidaDtos = entradaSaidaDtos;
     }
 }
