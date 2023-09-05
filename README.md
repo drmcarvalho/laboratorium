@@ -29,12 +29,12 @@ mvnw clean spring-boot:run
 
 Em ambientes linux, vamos deixar o arquivo `mvnw` executável 
 ```
-chmod +x mvnw
+$ chmod +x mvnw
 ```
 
 Em seguida, execute o seguinte comando
 ```
-$./mvnw clean spring-boot:run
+$ ./mvnw clean spring-boot:run
 ```
 
 ## OpenAPI documentação da API Rest
