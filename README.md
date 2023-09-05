@@ -22,8 +22,19 @@ cd laboratorium
 
 Vamos executar o maven e rodar projeto com o H2Database em memória digitanto o seguinte comando
 
+Em ambientes Windows, execute o seguinte comando
 ```
 mvnw clean spring-boot:run
+```
+
+Em ambientes linux, vamos deixar o arquivo `mvnw` executável 
+```
+chmod +x mvnw
+```
+
+Em seguida, execute o seguinte comando
+```
+$./mvnw clean spring-boot:run
 ```
 
 ## OpenAPI documentação da API Rest
